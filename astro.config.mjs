@@ -7,8 +7,29 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      // Optimize CSS
+      cssMinify: 'lightningcss',
+      // Better tree-shaking
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            react: ['react', 'react-dom'],
+          },
+        },
+      },
+    },
   },
 
-  integrations: [react()]
+  integrations: [react()],
+
+  // Compression et optimisation
+  compressHTML: true,
+
+  // Prefetch pour navigation plus rapide
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
 });

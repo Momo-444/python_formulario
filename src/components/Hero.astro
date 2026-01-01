@@ -5,19 +5,19 @@
 <section
 	class="hero-gradient relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-0"
 >
-	<!-- Animated background elements -->
-	<div class="absolute inset-0 overflow-hidden">
+	<!-- Animated background elements (optimized with will-change and reduced blur) -->
+	<div class="absolute inset-0 overflow-hidden" aria-hidden="true">
 		<div
-			class="absolute top-20 left-10 w-72 h-72 bg-accent-500/20 rounded-full blur-3xl animate-float"
+			class="absolute top-20 left-10 w-72 h-72 bg-accent-500/20 rounded-full blur-2xl animate-float will-change-transform"
 		>
 		</div>
 		<div
-			class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-500/20 rounded-full blur-3xl animate-float"
+			class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-500/20 rounded-full blur-2xl animate-float will-change-transform"
 			style="animation-delay: 2s;"
 		>
 		</div>
 		<div
-			class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-3xl"
+			class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/10 rounded-full blur-2xl"
 		>
 		</div>
 	</div>
@@ -33,6 +33,10 @@
 				<img
 					src="/logo.png"
 					alt="ToitureAI Logo"
+					width="192"
+					height="48"
+					fetchpriority="high"
+					decoding="async"
 					class="w-full h-auto brightness-0 invert"
 				/>
 			</a>
@@ -212,12 +216,13 @@
 	</div>
 
 	<!-- Scroll indicator -->
-	<div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+	<div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
 		<svg
 			class="w-8 h-8 text-white/60"
 			fill="none"
 			stroke="currentColor"
 			viewBox="0 0 24 24"
+			aria-hidden="true"
 		>
 			<path
 				stroke-linecap="round"
