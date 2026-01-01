@@ -265,9 +265,10 @@ export default function ContactForm() {
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-white font-medium mb-2">Prénom *</label>
+                                <label htmlFor="prenom" className="block text-white font-medium mb-2">Prénom *</label>
                                 <input
                                     {...register("prenom")}
+                                    id="prenom"
                                     type="text"
                                     placeholder="Jean"
                                     className="input-glass"
@@ -278,9 +279,10 @@ export default function ContactForm() {
                             </div>
 
                             <div>
-                                <label className="block text-white font-medium mb-2">Nom *</label>
+                                <label htmlFor="nom" className="block text-white font-medium mb-2">Nom *</label>
                                 <input
                                     {...register("nom")}
+                                    id="nom"
                                     type="text"
                                     placeholder="Dupont"
                                     className="input-glass"
@@ -292,9 +294,10 @@ export default function ContactForm() {
                         </div>
 
                         <div>
-                            <label className="block text-white font-medium mb-2">Email *</label>
+                            <label htmlFor="email" className="block text-white font-medium mb-2">Email *</label>
                             <input
                                 {...register("email")}
+                                id="email"
                                 type="email"
                                 placeholder="jean.dupont@exemple.fr"
                                 className="input-glass"
@@ -305,9 +308,10 @@ export default function ContactForm() {
                         </div>
 
                         <div>
-                            <label className="block text-white font-medium mb-2">Téléphone *</label>
+                            <label htmlFor="telephone" className="block text-white font-medium mb-2">Téléphone *</label>
                             <input
                                 {...register("telephone")}
+                                id="telephone"
                                 type="tel"
                                 placeholder="06 12 34 56 78"
                                 className="input-glass"
@@ -318,8 +322,8 @@ export default function ContactForm() {
                         </div>
 
                         <div>
-                            <label className="block text-white font-medium mb-2">Type de projet *</label>
-                            <select {...register("typeDeProjet")} className="input-glass">
+                            <label htmlFor="typeDeProjet" className="block text-white font-medium mb-2">Type de projet *</label>
+                            <select {...register("typeDeProjet")} id="typeDeProjet" className="input-glass">
                                 <option value="">Sélectionnez un type de projet</option>
                                 <option value="reparation">Réparation (fuite, tuiles cassées...)</option>
                                 <option value="renovation">Rénovation complète</option>
@@ -335,9 +339,10 @@ export default function ContactForm() {
 
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-white font-medium mb-2">Surface (m²)</label>
+                                <label htmlFor="surface" className="block text-white font-medium mb-2">Surface (m²)</label>
                                 <input
                                     {...register("surface")}
+                                    id="surface"
                                     type="number"
                                     placeholder="100"
                                     className="input-glass"
@@ -345,9 +350,10 @@ export default function ContactForm() {
                             </div>
 
                             <div>
-                                <label className="block text-white font-medium mb-2">Budget estimé (€)</label>
+                                <label htmlFor="budget" className="block text-white font-medium mb-2">Budget estimé (€)</label>
                                 <input
                                     {...register("budget")}
+                                    id="budget"
                                     type="number"
                                     placeholder="5000"
                                     step="100"
@@ -357,9 +363,10 @@ export default function ContactForm() {
                         </div>
 
                         <div>
-                            <label className="block text-white font-medium mb-2">Adresse du projet *</label>
+                            <label htmlFor="adresse" className="block text-white font-medium mb-2">Adresse du projet *</label>
                             <input
                                 {...register("adresse")}
+                                id="adresse"
                                 ref={addressInputRef}
                                 type="text"
                                 placeholder={googleMapsError ? "Ex: 12 Rue de la République" : "Commencez à taper votre adresse..."}
@@ -378,9 +385,10 @@ export default function ContactForm() {
 
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-white font-medium mb-2">Ville *</label>
+                                <label htmlFor="ville" className="block text-white font-medium mb-2">Ville *</label>
                                 <input
                                     {...register("ville")}
+                                    id="ville"
                                     type="text"
                                     placeholder="Metz"
                                     readOnly={!googleMapsError}
@@ -392,9 +400,10 @@ export default function ContactForm() {
                             </div>
 
                             <div>
-                                <label className="block text-white font-medium mb-2">Code postal *</label>
+                                <label htmlFor="codePostal" className="block text-white font-medium mb-2">Code postal *</label>
                                 <input
                                     {...register("codePostal")}
+                                    id="codePostal"
                                     type="text"
                                     placeholder="57000"
                                     readOnly={!googleMapsError}
@@ -407,8 +416,8 @@ export default function ContactForm() {
                         </div>
 
                         <div>
-                            <label className="block text-white font-medium mb-2">Délai souhaité</label>
-                            <select {...register("delai")} className="input-glass">
+                            <label htmlFor="delai" className="block text-white font-medium mb-2">Délai souhaité</label>
+                            <select {...register("delai")} id="delai" className="input-glass">
                                 <option value="">Choisissez un délai</option>
                                 <option value="urgent">Urgent (sous 48h)</option>
                                 <option value="1-2-semaines">Dans 1-2 semaines</option>
@@ -419,9 +428,10 @@ export default function ContactForm() {
                         </div>
 
                         <div>
-                            <label className="block text-white font-medium mb-2">Description du projet (optionnel)</label>
+                            <label htmlFor="description" className="block text-white font-medium mb-2">Description du projet (optionnel)</label>
                             <textarea
                                 {...register("description")}
+                                id="description"
                                 placeholder="Décrivez votre besoin : problème constaté, urgence, attentes particulières..."
                                 rows={4}
                                 className="input-glass resize-none"
@@ -462,7 +472,7 @@ export default function ContactForm() {
                         >
                             {isSubmitting ? (
                                 <span className="flex items-center justify-center gap-2">
-                                    <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                                    <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                     </svg>
@@ -479,7 +489,7 @@ export default function ContactForm() {
                     {submitSuccess && (
                         <div className="mt-6 glass-card bg-secondary-500/20 border-secondary-400/30 p-6 rounded-2xl">
                             <div className="flex items-start gap-3">
-                                <svg className="w-6 h-6 text-secondary-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-6 h-6 text-secondary-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 <div>
@@ -495,7 +505,7 @@ export default function ContactForm() {
                     {submitError && (
                         <div className="mt-6 glass-card bg-accent-500/20 border-accent-400/30 p-6 rounded-2xl">
                             <div className="flex items-start gap-3">
-                                <svg className="w-6 h-6 text-accent-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-6 h-6 text-accent-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 <div>
@@ -511,26 +521,26 @@ export default function ContactForm() {
 
                 <div className="text-center mt-8 text-white">
                     <p className="text-lg mb-4 flex items-center justify-center gap-2">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                         <span>Vos données sont sécurisées et ne seront jamais partagées</span>
                     </p>
                     <div className="flex justify-center gap-8 flex-wrap text-primary-100">
                         <div className="flex items-center gap-2">
-                            <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Réponse sous 24h</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                             <span>Sans engagement</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                             <span>100% gratuit</span>
