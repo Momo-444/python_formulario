@@ -10,7 +10,7 @@ const { title = "Expert Couvreur Grand Est | Réparation & Rénovation de Toitur
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="theme-color" content="#102a43" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/toitureai_favi.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 
@@ -24,7 +24,7 @@ const { title = "Expert Couvreur Grand Est | Réparation & Rénovation de Toitur
 		</noscript>
 
 		<!-- Preload logo for faster LCP -->
-		<link rel="preload" as="image" href="/logo.png" />
+		<link rel="preload" as="image" href="/logo.webp" type="image/webp" />
 
 		<!-- SEO Meta Tags -->
 		<meta name="robots" content="index, follow" />
@@ -37,7 +37,7 @@ const { title = "Expert Couvreur Grand Est | Réparation & Rénovation de Toitur
 		<meta property="og:description" content="Expert en couverture dans le Grand Est. Devis gratuit sous 24h. Entreprise certifiée RGE." />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://toitureai.fr" />
-		<meta property="og:image" content="https://toitureai.fr/logo.png" />
+		<meta property="og:image" content="https://toitureai.fr/logo.webp" />
 		<meta property="og:locale" content="fr_FR" />
 		<meta property="og:site_name" content="ToitureAI" />
 
@@ -45,7 +45,7 @@ const { title = "Expert Couvreur Grand Est | Réparation & Rénovation de Toitur
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content="Expert en couverture dans le Grand Est. Devis gratuit sous 24h." />
-		<meta name="twitter:image" content="https://toitureai.fr/logo.png" />
+		<meta name="twitter:image" content="https://toitureai.fr/logo.webp" />
 		
 		<!-- Schema.org JSON-LD -->
 		<script type="application/ld+json" set:html={JSON.stringify({
