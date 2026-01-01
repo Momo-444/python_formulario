@@ -14,14 +14,9 @@ const { title = "Expert Couvreur Grand Est | Réparation & Rénovation de Toitur
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 
-		<!-- Preload critical resources for LCP -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" media="print" onload="this.media='all'" />
-		<noscript>
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" />
-		</noscript>
+		<!-- Preload critical fonts (self-hosted) -->
+		<link rel="preload" as="font" type="font/ttf" href="/fonts/Inter/Inter-VariableFont_opsz,wght.ttf" crossorigin />
+		<link rel="preload" as="font" type="font/ttf" href="/fonts/Poppins/Poppins-Bold.ttf" crossorigin />
 
 		<!-- Preload logo for faster LCP -->
 		<link rel="preload" as="image" href="/logo.webp" type="image/webp" />
