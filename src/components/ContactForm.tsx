@@ -325,12 +325,12 @@ export default function ContactForm() {
                             <label htmlFor="typeDeProjet" className="block text-white font-medium mb-2">Type de projet *</label>
                             <select {...register("typeDeProjet")} id="typeDeProjet" className="input-glass">
                                 <option value="">Sélectionnez un type de projet</option>
-                                <option value="reparation">Réparation (fuite, tuiles cassées...)</option>
-                                <option value="renovation">Rénovation complète</option>
-                                <option value="isolation">Isolation thermique</option>
-                                <option value="installation">Installation neuve</option>
-                                <option value="maintenance">Entretien / Maintenance</option>
-                                <option value="autre">Autre</option>
+                                <option value="reparation">🔧 Réparation (fuite, tuiles cassées...)</option>
+                                <option value="renovation">🏠 Rénovation complète</option>
+                                <option value="isolation">💧 Isolation thermique</option>
+                                <option value="installation">🔨 Installation neuve</option>
+                                <option value="maintenance">✅ Entretien / Maintenance</option>
+                                <option value="autre">❓ Autre</option>
                             </select>
                             {errors.typeDeProjet && (
                                 <p className="text-accent-300 text-sm mt-1">{errors.typeDeProjet.message}</p>
