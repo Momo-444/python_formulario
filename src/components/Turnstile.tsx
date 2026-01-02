@@ -1,4 +1,4 @@
-import { useEffect, useRef, useId } from 'react';
+import { useEffect, useRef, useId, useState } from 'react';
 
 interface TurnstileProps {
   onVerify: (token: string) => void;
@@ -33,6 +33,7 @@ export function Turnstile({ onVerify, onError }: TurnstileProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
   const hasRenderedRef = useRef(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   // Récupérer la sitekey de manière sûre
   const siteKey = typeof import.meta.env.PUBLIC_TURNSTILE_SITE_KEY === 'string'
@@ -67,6 +68,8 @@ export function Turnstile({ onVerify, onError }: TurnstileProps) {
           'error-callback': onError,
           theme: 'light',
         });
+        // Marquer comme chargé après un court délai pour laisser le widget s'afficher
+        setTimeout(() => setIsLoaded(true), 100);
       } catch (error) {
         hasRenderedRef.current = false;
         console.error('Turnstile render error:', error);
@@ -145,7 +148,8 @@ export function Turnstile({ onVerify, onError }: TurnstileProps) {
     <div
       ref={containerRef}
       id={`turnstile-container-${uniqueId}`}
-      className="cf-turnstile flex justify-center my-4"
+      className={`cf-turnstile flex justify-center my-4 transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+      style={{ minHeight: isLoaded ? 'auto' : '0px' }}
     />
   );
 }
