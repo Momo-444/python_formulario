@@ -327,7 +327,7 @@ export default function ContactForm() {
                                 <option value="">Sélectionnez un type de projet</option>
                                 <option value="reparation">🔧 Réparation (fuite, tuiles cassées...)</option>
                                 <option value="renovation">🏠 Rénovation complète</option>
-                                <option value="isolation">💧 Isolation thermique</option>
+                                <option value="isolation">🛡️ Isolation thermique</option>
                                 <option value="installation">🔨 Installation neuve</option>
                                 <option value="maintenance">✅ Entretien / Maintenance</option>
                                 <option value="autre">❓ Autre</option>
